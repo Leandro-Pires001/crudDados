@@ -1,5 +1,6 @@
 package com.canalgeekdev.cliente.model;
 
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class Pessoa {
 	
 	@ManyToMany(mappedBy = "Pessoas")
 	private List <Exames> exames;
-	
+
 	public int getId() {
 		return id;
 	}
