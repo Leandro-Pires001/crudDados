@@ -17,22 +17,22 @@ public class Conecxao {
 		em = emf.createEntityManager();
 	}
 	
-	public Dados getId(int Id) {
+	public Pessoa getId(int Id) {
 		em.getTransaction().begin();
-		Dados dados = em.find(Dados.class, Id);
+		Pessoa dados = em.find(Pessoa.class, Id);
 		em.getTransaction().commit();
 		
 		return dados;
 	}
 
-	public void salvarDados(Dados dados) {
+	public void salvarDados(Pessoa dados) {
 		em.getTransaction().begin();
 		em.merge(dados);
 		em.getTransaction().commit();
 		emf.close();
 	}
 
-	public void removerDados(Dados dados) {
+	public void removerDados(Pessoa dados) {
 		em.getTransaction().begin();
 		em.remove(dados);
 		em.getTransaction().commit();
@@ -40,10 +40,10 @@ public class Conecxao {
 	}
 
 	
-	public List<Dados> listarTodos(){
+	public List<Pessoa> listarTodos(){
 		em.getTransaction().begin();
 		javax.persistence.Query list = em.createQuery("select dados from Dados dados");
-		List<Dados> pessoas = list.getResultList();
+		List<Pessoa> pessoas = list.getResultList();
 		em.getTransaction().commit();
 		emf.close();
 		return pessoas;

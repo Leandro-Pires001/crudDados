@@ -3,18 +3,18 @@ package com.canalgeekdev.cliente;
 import java.util.List;
 
 import com.canalgeekdev.cliente.model.Conecxao;
-import com.canalgeekdev.cliente.model.Dados;
+import com.canalgeekdev.cliente.model.Pessoa;
 
 public class Teste {
 	public static void main(String[] args) {
 			//salvar
-		/*Conecxao conecxao = new Conecxao();
-		Dados pessoa = new Dados();
+		Conecxao conecxao = new Conecxao();
+		Pessoa pessoa = new Pessoa();
 		pessoa.setNome("Gustavo Pinho");
 		pessoa.setCpf("01341931014");
 		pessoa.setRg("20083402034");
 		
-	 conecxao.salvarDados(pessoa);*/
+	 conecxao.salvarDados(pessoa);
 		
 			//atualizar
 		//Conecxao conecxao = new Conecxao();
