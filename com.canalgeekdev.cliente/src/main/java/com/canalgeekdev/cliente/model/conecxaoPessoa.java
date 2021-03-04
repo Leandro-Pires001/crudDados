@@ -7,12 +7,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class Conecxao {
+public class conecxaoPessoa {
 
 	EntityManagerFactory emf;
 	EntityManager em;
 
-	public Conecxao() {
+	public conecxaoPessoa() {
 		emf = Persistence.createEntityManagerFactory("pessoa");
 		em = emf.createEntityManager();
 	}

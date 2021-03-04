@@ -2,17 +2,17 @@ package com.canalgeekdev.cliente;
 
 import java.util.List;
 
-import com.canalgeekdev.cliente.model.Conecxao;
+import com.canalgeekdev.cliente.model.conecxaoPessoa;
 import com.canalgeekdev.cliente.model.Pessoa;
 
-public class Teste {
+public class testePessoa {
 	public static void main(String[] args) {
 			//salvar
-		Conecxao conecxao = new Conecxao();
+		conecxaoPessoa conecxao = new conecxaoPessoa();
 		Pessoa pessoa = new Pessoa();
-		pessoa.setNome("Gustavo Pinho");
-		pessoa.setCpf("01341931014");
-		pessoa.setRg("20083402034");
+		pessoa.setNome("Anderson Silva");
+		pessoa.setCpf("01341933013");
+		pessoa.setRg("20083401934");
 		
 	 conecxao.salvarDados(pessoa);
 		

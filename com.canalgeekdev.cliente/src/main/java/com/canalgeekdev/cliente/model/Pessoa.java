@@ -1,13 +1,16 @@
 package com.canalgeekdev.cliente.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Dados ")
+@Table(name = "Pessoa")
 public class Pessoa {
 
 	@Id
@@ -16,6 +19,9 @@ public class Pessoa {
 	private String nome;
 	private String cpf;
 	private String rg;
+	
+	@ManyToMany(mappedBy = "Pessoas")
+	private List <Exames> exames;
 	
 	public int getId() {
 		return id;
