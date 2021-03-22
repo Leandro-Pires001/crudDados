@@ -3,10 +3,13 @@ package com.canalgeekdev.cliente.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -21,7 +24,9 @@ public class Pessoa {
 	private String cpf;
 	private String rg;
 	
-	@ManyToMany(mappedBy = "Pessoas")
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "Escritos", joinColumns = @JoinColumn(name = "pessoa_id"), 
+	inverseJoinColumns = @JoinColumn(name = "exames_id"))
 	private List <Exames> exames;
 
 	public int getId() {
@@ -48,7 +53,10 @@ public class Pessoa {
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
-	
-	
-	
+	public List<Exames> getExames(){
+		return exames;
+	}
+	public void setExames(List<Exames> exame){
+		this.exames = exame;
+	}
 }

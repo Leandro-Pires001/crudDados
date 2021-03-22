@@ -28,6 +28,7 @@ public class conecxaoPessoa {
 	public void salvarDados(Pessoa dados) {
 		em.getTransaction().begin();
 		em.merge(dados);
+		
 		em.getTransaction().commit();
 		emf.close();
 	}
@@ -42,7 +43,7 @@ public class conecxaoPessoa {
 	
 	public List<Pessoa> listarTodos(){
 		em.getTransaction().begin();
-		javax.persistence.Query list = em.createQuery("select dados from Dados dados");
+		javax.persistence.Query list = em.createQuery("select pessoa from Pessoa pessoa");
 		List<Pessoa> pessoas = list.getResultList();
 		em.getTransaction().commit();
 		emf.close();
